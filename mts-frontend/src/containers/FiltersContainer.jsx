@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Filters from "../views/Filters";
 import { toggleCategory as toggleCategoryAction } from "../reducers/categoriesReducer";
 import { connect } from "react-redux";
+import { Menu } from "antd";
 
 const propTypes = {
   categories: PropTypes.array.isRequired,
@@ -18,7 +19,9 @@ function FiltersContainer({ toggleCategory, categories }) {
   };
 
   return (
-    <Filters onToggleCategory={onToggleCategory} categories={categories} />
+    <Menu theme="dark">
+      <Filters onToggleCategory={onToggleCategory} categories={categories} />
+    </Menu>
   );
 }
 

@@ -1,10 +1,10 @@
 import { createReducer, createAction } from "redux-starter-kit";
-import { create } from "domain";
 
 //Defining initial state
 const initialState = [
   { name: "Restaurants", id: 1, selected: false },
-  { name: "Strip Clubs", id: 2, selected: false }
+  { name: "Fitness", id: 2, selected: false },
+  { name: "Arts", id: 3, selected: false }
 ];
 
 //Creating action creator functions and assigning them to variables

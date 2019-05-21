@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "../stylesheets/page.module.css";
 
 const propTypes = {
   topform: PropTypes.node.isRequired,
@@ -13,7 +14,7 @@ export default function Page({ topForm, mapContainer, rightBar }) {
   return (
     <React.Fragment>
       <div> {topForm} </div>
-      <div>{mapContainer}</div>
+      <div className={styles.map}>{mapContainer}</div>
       <div>{rightBar}</div>
     </React.Fragment>
   );
