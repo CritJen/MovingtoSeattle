@@ -5,6 +5,9 @@ import Page from "./views/Page";
 import FiltersContainer from "./containers/FiltersContainer";
 import store from "./createStore";
 import { Provider } from "react-redux";
+import { getLocations } from "./reducers/locationsReducer";
+
+store.dispatch(getLocations());
 
 function App() {
   return (
