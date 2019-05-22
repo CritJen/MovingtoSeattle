@@ -8,8 +8,10 @@ import { Provider } from "react-redux";
 import { getLocations } from "./reducers/locationsReducer";
 import styles from "./stylesheets/app.module.css";
 import "./stylesheets/app.css";
+import { getCategories } from "./reducers/categoriesReducer";
 
 store.dispatch(getLocations());
+store.dispatch(getCategories());
 
 function App() {
   return (

@@ -5,7 +5,7 @@ import styles from "../stylesheets/filters.module.css";
 
 const propTypes = {};
 
-const defaultProps = {};
+const defaultProps = { categories: [] };
 
 export default function Filters({
   onToggleCategory,

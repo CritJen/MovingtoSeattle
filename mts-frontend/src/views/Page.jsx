@@ -10,7 +10,7 @@ const propTypes = {
 
 const defaultProps = {};
 
-export default function Page({ topForm, mapContainer, rightBar }) {
+export default function Page({ topForm, mapContainer }) {
   return (
     <React.Fragment>
       <div className={styles.map}>{mapContainer}</div>
