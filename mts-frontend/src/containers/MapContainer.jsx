@@ -18,11 +18,12 @@ export function MapContainer({ selectedCategories, locations }) {
     positions: locations.map(location => ({
       lat: location.latitude,
       lng: location.longitude,
-      weight: 1
+      weight: selectedCategories.find(cat => cat.id === location.category_id)
+        .weight
     })),
     options: {
       radius: 12,
-      opacity: 0.6
+      opacity: 0.9
     }
   };
   return (

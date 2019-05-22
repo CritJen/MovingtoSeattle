@@ -1,11 +1,16 @@
 import { createReducer, createAction } from "redux-starter-kit";
 
 //Defining initial state
-const initialState = [
-  { name: "Restaurants", id: 1, selected: false, weight: 1 },
-  { name: "Fitness", id: 2, selected: false, weight: 1 },
-  { name: "Arts", id: 3, selected: false, weight: 1 }
-];
+const initialState = [];
+
+const categoriesUrl = "http://localhost:3000/categories";
+
+//Fetches the data from our backend api, passes it into the addLocations action creator, and then dispatches the result
+export const getCategories = () => dispatch => {
+  fetch(categoriesUrl)
+    .then(resp => resp.json())
+    .then(data => dispatch(addCategory(data)));
+};
 
 //Creating action creator functions and assigning them to variables
 export const addCategory = createAction("addCategory");
@@ -17,7 +22,7 @@ export const changeWeight = createAction("changeWeight");
 const categoriesReducer = createReducer(initialState, {
   [addCategory]: (state, action) => {
     // "mutate" the array by calling push()
-    state.push(action.payload);
+    return [...action.payload];
   },
   [toggleCategory]: (state, action) => {
     const category = state.find(cat => cat.id === action.payload);
@@ -29,7 +34,7 @@ const categoriesReducer = createReducer(initialState, {
     return state.filter((todo, i) => i !== action.payload.index);
   },
   [changeWeight]: (state, action) => {
-    let newWeight = action.payload.value / 33.33;
+    let newWeight = action.payload.value / 100;
     const category = state.find(cat => cat.id === action.payload.category);
     category.weight = newWeight;
   }
