@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Filters from "../views/Filters";
-import { toggleCategory as toggleCategoryAction } from "../reducers/categoriesReducer";
+import {
+  toggleCategory as toggleCategoryAction,
+  changeWeight as changeWeightAction
+} from "../reducers/categoriesReducer";
 import { connect } from "react-redux";
-import { Menu } from "antd";
 
 const propTypes = {
   categories: PropTypes.array.isRequired,
@@ -12,16 +14,21 @@ const propTypes = {
 
 const defaultProps = {};
 
-function FiltersContainer({ toggleCategory, categories }) {
+function FiltersContainer({ toggleCategory, categories, changeWeight }) {
   const onToggleCategory = categoryId => ev => {
-    const { value: categoryId } = ev.target;
     toggleCategory(categoryId);
   };
 
+  const onWeightChange = category => value => {
+    changeWeight({ category, value });
+  };
+
   return (
-    <Menu theme="dark">
-      <Filters onToggleCategory={onToggleCategory} categories={categories} />
-    </Menu>
+    <Filters
+      onToggleCategory={onToggleCategory}
+      categories={categories}
+      onWeightChange={onWeightChange}
+    />
   );
 }
 
@@ -35,5 +42,5 @@ function mapStateToProps({ categories }) {
 
 export default connect(
   mapStateToProps,
-  { toggleCategory: toggleCategoryAction }
+  { toggleCategory: toggleCategoryAction, changeWeight: changeWeightAction }
 )(FiltersContainer);

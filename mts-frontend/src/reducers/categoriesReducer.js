@@ -2,15 +2,16 @@ import { createReducer, createAction } from "redux-starter-kit";
 
 //Defining initial state
 const initialState = [
-  { name: "Restaurants", id: 1, selected: false },
-  { name: "Fitness", id: 2, selected: false },
-  { name: "Arts", id: 3, selected: false }
+  { name: "Restaurants", id: 1, selected: false, weight: 1 },
+  { name: "Fitness", id: 2, selected: false, weight: 1 },
+  { name: "Arts", id: 3, selected: false, weight: 1 }
 ];
 
 //Creating action creator functions and assigning them to variables
 export const addCategory = createAction("addCategory");
 export const toggleCategory = createAction("toggleCategory");
 export const removeCategory = createAction("removeCategory");
+export const changeWeight = createAction("changeWeight");
 
 //Creating the reducer to handle different action types. Finding the action type through toString on the variables
 const categoriesReducer = createReducer(initialState, {
@@ -26,6 +27,11 @@ const categoriesReducer = createReducer(initialState, {
   [removeCategory]: (state, action) => {
     // Can still return an immutably-updated value if we want to
     return state.filter((todo, i) => i !== action.payload.index);
+  },
+  [changeWeight]: (state, action) => {
+    let newWeight = action.payload.value / 33.33;
+    const category = state.find(cat => cat.id === action.payload.category);
+    category.weight = newWeight;
   }
 });
 

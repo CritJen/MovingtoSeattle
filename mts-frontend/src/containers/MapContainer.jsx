@@ -17,10 +17,11 @@ export function MapContainer({ selectedCategories, locations }) {
   const heatMapData = {
     positions: locations.map(location => ({
       lat: location.latitude,
-      lng: location.longitude
+      lng: location.longitude,
+      weight: 1
     })),
     options: {
-      radius: 20,
+      radius: 12,
       opacity: 0.6
     }
   };

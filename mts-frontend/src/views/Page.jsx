@@ -13,9 +13,8 @@ const defaultProps = {};
 export default function Page({ topForm, mapContainer, rightBar }) {
   return (
     <React.Fragment>
-      <div> {topForm} </div>
       <div className={styles.map}>{mapContainer}</div>
-      <div>{rightBar}</div>
+      <div> {topForm} </div>
     </React.Fragment>
   );
 }

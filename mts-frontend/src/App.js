@@ -6,13 +6,15 @@ import FiltersContainer from "./containers/FiltersContainer";
 import store from "./createStore";
 import { Provider } from "react-redux";
 import { getLocations } from "./reducers/locationsReducer";
+import styles from "./stylesheets/app.module.css";
+import "./stylesheets/app.css";
 
 store.dispatch(getLocations());
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className={styles.app}>
         <Page
           mapContainer={<MapContainer />}
           topForm={<FiltersContainer />}
