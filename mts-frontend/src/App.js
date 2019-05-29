@@ -9,9 +9,11 @@ import { getLocations } from "./reducers/locationsReducer";
 import styles from "./stylesheets/app.module.css";
 import "./stylesheets/app.css";
 import { getCategories } from "./reducers/categoriesReducer";
+import { getProperties } from "./reducers/propertiesReducer";
 
 store.dispatch(getLocations());
 store.dispatch(getCategories());
+store.dispatch(getProperties());
 
 function App() {
   return (

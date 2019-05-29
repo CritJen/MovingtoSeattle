@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import GoogleMapReact from "google-map-react";
-
+import Marker from "../views/Marker";
 const propTypes = {
   loaded: PropTypes.bool.isRequired,
   selectedCategories: PropTypes.array.isRequired
@@ -26,21 +26,22 @@ export function MapContainer({ selectedCategories, locations }) {
       opacity: 0.9
     }
   };
+
   return (
     <>
-      {
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyC5GtsnQTnxNEJuwDpjgb9laNU8Ta35RLw" }}
-          defaultZoom={14}
-          style={{ mapStyles }}
-          heatmapLibrary={true}
-          heatmap={heatMapData}
-          defaultCenter={{
-            lat: 47.6062,
-            lng: -122.3321
-          }}
-        />
-      }
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: "AIzaSyC5GtsnQTnxNEJuwDpjgb9laNU8Ta35RLw" }}
+        defaultZoom={14}
+        yesIWantToUseGoogleMapApiInternals
+        style={{ mapStyles }}
+        heatmapLibrary={true}
+        heatmap={heatMapData}
+        defaultCenter={{
+          lat: 47.6062,
+          lng: -122.3321
+        }}
+      />
+      <Marker lat={47.6778651} lng={-122.1726827} show={true} place={"hello"} />
     </>
   );
 }
