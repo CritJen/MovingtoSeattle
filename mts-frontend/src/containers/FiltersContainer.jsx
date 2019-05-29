@@ -6,6 +6,8 @@ import {
   changeWeight as changeWeightAction
 } from "../reducers/categoriesReducer";
 import { connect } from "react-redux";
+import { Button } from "antd";
+import { findDistance } from "../utils/findLocations";
 
 const propTypes = {
   categories: PropTypes.array.isRequired,
@@ -14,7 +16,13 @@ const propTypes = {
 
 const defaultProps = {};
 
-function FiltersContainer({ toggleCategory, categories, changeWeight }) {
+function FiltersContainer({
+  toggleCategory,
+  categories,
+  changeWeight,
+  locations,
+  properties
+}) {
   const onToggleCategory = categoryId => ev => {
     toggleCategory(categoryId);
   };
@@ -24,11 +32,16 @@ function FiltersContainer({ toggleCategory, categories, changeWeight }) {
   };
 
   return (
-    <Filters
-      onToggleCategory={onToggleCategory}
-      categories={categories}
-      onWeightChange={onWeightChange}
-    />
+    <>
+      <Filters
+        onToggleCategory={onToggleCategory}
+        categories={categories}
+        onWeightChange={onWeightChange}
+      />
+      <Button onClick={() => findDistance(locations, properties)}>
+        Where Should I Live?
+      </Button>
+    </>
   );
 }
 
@@ -36,8 +49,8 @@ FiltersContainer.propTypes = propTypes;
 FiltersContainer.defaultProps = defaultProps;
 
 //Creating a categories prop with a value of an array of objects containing all possible categories
-function mapStateToProps({ categories }) {
-  return { categories };
+function mapStateToProps({ categories, properties, locations }) {
+  return { categories, properties, locations };
 }
 
 export default connect(
