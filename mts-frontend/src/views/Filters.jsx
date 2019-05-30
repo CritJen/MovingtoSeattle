@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Checkbox, Slider, Switch } from "antd";
+import { Slider, Switch } from "antd";
 import styles from "../stylesheets/filters.module.css";
 
-const propTypes = {};
+const propTypes = {
+  onToggleCategory: PropTypes.func.isRequired,
+  categories: PropTypes.array.isRequired,
+  onWeightChange: PropTypes.func.isRequired
+};
 
 const defaultProps = { categories: [] };
 
@@ -13,9 +17,9 @@ export default function Filters({
   onWeightChange
 }) {
   return categories.map(category => {
-    const { selected, name } = category;
+    const { selected, name, id } = category;
     return (
-      <div className={styles.filterColumn}>
+      <div className={styles.filterColumn} key={id}>
         {name}
         <Slider
           defaultValue={30}

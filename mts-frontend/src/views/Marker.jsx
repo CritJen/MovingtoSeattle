@@ -12,7 +12,7 @@ const Marker = props => {
     borderRadius: "50%",
     height: 10,
     width: 10,
-    backgroundColor: props.show ? "red" : "blue",
+    backgroundColor: "blue",
     cursor: "pointer",
     zIndex: 10
   };
@@ -20,7 +20,7 @@ const Marker = props => {
   return (
     <>
       <div style={markerStyle} />
-      {props.show && <InfoWindow place={props.place} />}
+      {props.show}
     </>
   );
 };

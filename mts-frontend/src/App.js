@@ -10,6 +10,7 @@ import styles from "./stylesheets/app.module.css";
 import "./stylesheets/app.css";
 import { getCategories } from "./reducers/categoriesReducer";
 import { getProperties } from "./reducers/propertiesReducer";
+import SuggestedHomes from "./containers/SuggestedHomes";
 
 store.dispatch(getLocations());
 store.dispatch(getCategories());
@@ -22,7 +23,7 @@ function App() {
         <Page
           mapContainer={<MapContainer />}
           topForm={<FiltersContainer />}
-          rightBar={<div />}
+          suggestions={<SuggestedHomes />}
         />
       </div>
     </Provider>
