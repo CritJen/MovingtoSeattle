@@ -40,5 +40,5 @@ export function findDistance(locations, properties) {
       ? 1
       : 0
   );
-  return sortedProperties;
+  return sortedProperties.slice(0, 10);
 }

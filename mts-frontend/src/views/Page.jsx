@@ -3,20 +3,36 @@ import PropTypes from "prop-types";
 import styles from "../stylesheets/page.module.css";
 
 const propTypes = {
-  topform: PropTypes.node.isRequired,
-  mapcontainer: PropTypes.node.isRequired,
-  rightbar: PropTypes.node.isRequired
+  mapContainer: PropTypes.node.isRequired,
+  topForm: PropTypes.node.isRequired,
+  suggestions: PropTypes.node.isRequired
 };
 
 const defaultProps = {};
 
-export default function Page({ topForm, mapContainer }) {
-  return (
-    <React.Fragment>
-      <div className={styles.map}>{mapContainer}</div>
-      <div> {topForm} </div>
-    </React.Fragment>
-  );
+export default class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showingResults: true,
+      suggestions: []
+    };
+  }
+
+  toggleResults = () => {
+    this.setState({ showingResults: !this.state.showingResults });
+  };
+
+  render() {
+    const { mapContainer, topForm, suggestions } = this.props;
+    return (
+      <React.Fragment>
+        <div>{this.state.showingResults && suggestions}</div>
+        <div className={styles.map}>{mapContainer}</div>
+        <div>{topForm}</div>
+      </React.Fragment>
+    );
+  }
 }
 
 Page.propTypes = propTypes;
