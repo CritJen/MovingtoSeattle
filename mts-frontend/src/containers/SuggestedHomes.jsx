@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "../stylesheets/suggestions.module.css";
 import { connect } from "react-redux";
 import HomeCard from "../views/HomeCard";
+import { toggleHovered as toggleHoveredAction } from "../reducers/suggestionsReducer";
 
 const propTypes = {};
 
@@ -22,11 +23,12 @@ class SuggestedHomes extends React.Component {
   };
 
   render() {
+    const { toggleHovered } = this.props;
     return (
       <React.Fragment>
         <div className={styles.suggestionsColumn}>
           {this.props.suggestions.map(rental => (
-            <HomeCard {...rental} />
+            <HomeCard {...rental} toggleHovered={toggleHovered} />
           ))}
         </div>
       </React.Fragment>
@@ -43,5 +45,5 @@ function mapStateToProps({ suggestions }) {
 
 export default connect(
   mapStateToProps,
-  {}
+  { toggleHovered: toggleHoveredAction }
 )(SuggestedHomes);

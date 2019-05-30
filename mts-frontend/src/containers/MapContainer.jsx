@@ -54,6 +54,7 @@ export function MapContainer({ selectedCategories, locations, suggestions }) {
               show={true}
               place={"hello"}
               text={"Hi!"}
+              hovered={rental.hovered}
             />
           );
         })}
