@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import InfoWindow from "./InfoWindow";
+import { Icon } from "antd";
 
 const propTypes = {};
 
@@ -15,15 +15,26 @@ const Marker = props => {
     backgroundColor: "#9932CC",
     cursor: "pointer",
     zIndex: 10,
-    transition: "transform 1000ms ease-in-out"
+    transition: "transform 500ms ease-in-out"
   };
 
   return (
     <>
-      <div style={markerStyle}>
-        <div />
-      </div>
-      {props.show}
+      {!props.hovered && (
+        <Icon
+          type="home"
+          theme="filled"
+          style={{ fontSize: "14px", color: "#4B0082" }}
+        />
+      )}
+      {props.hovered && (
+        <Icon
+          type="star"
+          theme="twoTone"
+          twoToneColor="#FF00FF"
+          style={{ fontSize: "18px" }}
+        />
+      )}
     </>
   );
 };
