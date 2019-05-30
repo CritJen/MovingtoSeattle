@@ -24,9 +24,12 @@ export default function HomeCard({
   address,
   monthly_rent,
   bedroom,
-  bathroom
+  bathroom,
+  neighborhood,
+  link_id
 }) {
-  var cleanAddress = address.replace(/[|&;$%@"<>()+,]/g, "");
+  let cleanAddress = address.replace(/[|&;$%@"<>()+,]/g, "");
+  let link = `https://www.seattlerentals.com/${neighborhood}/apartments/${link_id}`;
 
   debugger;
   return (
@@ -40,7 +43,12 @@ export default function HomeCard({
           {bedroom} || {bathroom}
         </span>
         <br />
-        <Icon type="save" />
+        <Icon
+          type="eye"
+          theme="twoTone"
+          twoToneColor="#52c41a"
+          onClick={() => window.open(link, "_blank")}
+        />
       </div>
     </React.Fragment>
   );
