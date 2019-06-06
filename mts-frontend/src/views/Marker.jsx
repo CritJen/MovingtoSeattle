@@ -7,17 +7,6 @@ const propTypes = {};
 const defaultProps = {};
 
 const Marker = props => {
-  const markerStyle = {
-    border: "1px #E6E6FA",
-    borderRadius: "50%",
-    height: props.hovered ? 30 : 10,
-    width: props.hovered ? 30 : 10,
-    backgroundColor: "#9932CC",
-    cursor: "pointer",
-    zIndex: 10,
-    transition: "transform 500ms ease-in-out"
-  };
-
   return (
     <>
       {!props.hovered && (
