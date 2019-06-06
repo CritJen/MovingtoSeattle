@@ -40,12 +40,31 @@ function FiltersContainer({
 
   return (
     <>
+      <h3
+        style={{
+          borderBottom: "1px double black",
+          textAlign: "center",
+          paddingBottom: 5
+        }}
+      >
+        What would you like to live near?
+      </h3>
+      <p
+        style={{
+          borderBottom: "1px dashed #333",
+          textAlign: "center",
+          paddingBottom: 5
+        }}
+      >
+        Choose as many categories as you like!
+      </p>
       <Filters
         onToggleCategory={onToggleCategory}
         categories={categories}
         onWeightChange={onWeightChange}
       />
-      <Button onClick={onSuggestionButtonClick}>Where Should I Live?</Button>
+      <br />
+      <Button onClick={onSuggestionButtonClick}>Let's find some places!</Button>
     </>
   );
 }

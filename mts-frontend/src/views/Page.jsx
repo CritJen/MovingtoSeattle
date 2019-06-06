@@ -14,7 +14,6 @@ export default class Page extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showingResults: true,
       suggestions: []
     };
   }
@@ -27,9 +26,9 @@ export default class Page extends React.Component {
     const { mapContainer, topForm, suggestions } = this.props;
     return (
       <React.Fragment>
-        <div>{this.state.showingResults && suggestions}</div>
+        <div style={{ padding: 5 }}>{topForm}</div>
         <div className={styles.map}>{mapContainer}</div>
-        <div>{topForm}</div>
+        <div>{suggestions}</div>
       </React.Fragment>
     );
   }
