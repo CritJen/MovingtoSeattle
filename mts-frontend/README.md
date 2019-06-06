@@ -1,25 +1,25 @@
-#Moving to Seattle
+# Moving to Seattle
 
 This project displays heatmaps of Seattle based on selected categories and then suggests currently available rental properties. You can toggle the different categories on or off. While a category is selected any locations contained said category will be displayed as a heatmap visualization layer over the map of Seattle. You can vary the intensity of the each heatmap category using the sliders. When you press the "Where should I live?" button 10 suggested rental listings will appear. These are currently available rentals which are located in the densest regions based on the categories currently selected.
 
-##Getting Started
+## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-###Prerequisites
+### Prerequisites
 
 What things you need to install the software and how to install them
 
-###Installing
+### Installing
 
 To get the project up and running you need to run
 `npm install and then`npm start
 
-###Built With
+### Built With
 
 React- The web framework used
 Npm - Dependency Management
 
-###Authors
+### Authors
 
 Jennifer Clark
