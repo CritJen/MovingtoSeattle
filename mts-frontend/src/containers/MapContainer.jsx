@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import GoogleMapReact from "google-map-react";
 import Marker from "../views/Marker";
+import { toggleHovered as toggleHoveredAction } from "../reducers/suggestionsReducer";
 
 const propTypes = {
   selectedCategories: PropTypes.array.isRequired,
@@ -11,7 +12,12 @@ const propTypes = {
   suggestions: PropTypes.array.isRequired
 };
 
-export function MapContainer({ selectedCategories, locations, suggestions }) {
+export function MapContainer({
+  selectedCategories,
+  locations,
+  suggestions,
+  toggleHovered
+}) {
   const mapStyles = {
     width: "80vh",
     height: "80%"
@@ -49,12 +55,14 @@ export function MapContainer({ selectedCategories, locations, suggestions }) {
           return (
             <Marker
               key={rental.id}
+              id={rental.id}
               lat={rental.latitude}
               lng={rental.longitude}
               show={true}
               place={"hello"}
               text={"Hi!"}
               hovered={rental.hovered}
+              toggleHovered={toggleHovered}
             />
           );
         })}
@@ -79,5 +87,5 @@ function mapStateToProps({ categories, locations, suggestions }) {
 
 export default connect(
   mapStateToProps,
-  {}
+  { toggleHovered: toggleHoveredAction }
 )(MapContainer);
