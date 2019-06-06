@@ -6,14 +6,13 @@ This project displays heatmaps of Seattle based on selected categories and then 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+### Installation
 
-What things you need to install the software and how to install them
+`npm install
 
-### Installing
+### Usage
 
-To get the project up and running you need to run
-`npm install and then`npm start
+`npm start
 
 ### Built With
 
