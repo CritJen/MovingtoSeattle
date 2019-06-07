@@ -4,3 +4,8 @@
   transition: 0.3s;
   padding: 2px 16px;
 }
+
+.selected {
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2) !important;
+  background-color: #c0c0c0;
+}

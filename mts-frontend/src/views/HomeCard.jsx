@@ -28,15 +28,18 @@ export default function HomeCard({
   neighborhood,
   link_id,
   toggleHovered,
-  id
+  id,
+  hovered
 }) {
   let cleanAddress = address.replace(/[|&;$%@"<>()+,]/g, "");
   let link = `https://www.seattlerentals.com/${neighborhood}/apartments/${link_id}`;
 
+  let additionalClassName = hovered ? "{styles.selected}" : "";
+
   return (
     <React.Fragment>
       <div
-        className={styles.card}
+        className={`${styles.card} ${hovered ? styles.selected : " "}`}
         onMouseEnter={() => toggleHovered(id)}
         onMouseLeave={() => toggleHovered(id)}
       >

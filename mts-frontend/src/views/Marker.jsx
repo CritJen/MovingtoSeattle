@@ -14,6 +14,7 @@ const Marker = props => {
           type="home"
           theme="filled"
           style={{ fontSize: "14px", color: "#4B0082" }}
+          onMouseEnter={() => props.toggleHovered(props.id)}
         />
       )}
       {props.hovered && (
@@ -22,6 +23,7 @@ const Marker = props => {
           theme="twoTone"
           twoToneColor="#FF00FF"
           style={{ fontSize: "18px" }}
+          onMouseLeave={() => props.toggleHovered(props.id)}
         />
       )}
     </>
