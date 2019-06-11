@@ -1,8 +1,12 @@
 # Moving to Seattle
 
-This project displays heatmaps of Seattle based on selected categories and then suggests currently available rental properties. You can toggle the different categories on or off. While a category is selected any locations contained said category will be displayed as a heatmap visualization layer over the map of Seattle. You can vary the intensity of the each heatmap category using the sliders. When you press the "Where should I live?" button 10 suggested rental listings will appear. These are currently available rentals which are located in the densest regions based on the categories currently selected.
+This project displays heatmaps of Seattle based on selected categories and then suggests currently available rental properties. You can toggle the different categories on or off. While a category is selected any locations contained said category will be displayed as a heatmap visualization layer over the map of Seattle. You can vary the intensity of the each heatmap category using the sliders.
 
-![VideoDemo](mts-frontend/src/images/demo.gif)
+![VideoDemo](src/images/Demo-1.gif)
+
+When you press the "Where should I live?" button 10 suggested rental listings will appear. These are currently available rentals which are located in the densest regions based on the categories currently selected.
+
+![VideoDemo](src/images/Demo-2-short.gif)
 
 ## Getting Started
 
