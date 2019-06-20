@@ -30,7 +30,7 @@ npm start
 
 You should see a message which says something is already running on port 3000. Select yes (y) to run the app on port 3001.
 
-+Visit http://localhost:3001/ to intertact with the web app
+- Visit http://localhost:3001/ to intertact with the web app
 
 ### Built With
 
