@@ -10,19 +10,25 @@ When you press the "Where should I live?" button 10 suggested rental listings wi
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+If you want to run this application locally you'll first need to navigate over to the backend: https://github.com/CritJen/MovingToSeattle-BackEnd
 
-### Installation
+### Setting Up The Frontend
+
+- Install the neccessary dependencies
 
 ```
 npm install
 ```
 
-### Usage
+- Start your local server
 
 ```
 npm start
 ```
+
+You should see a message which says something is already running on port 3000. Select yes (y) to run the app on port 3001.
+
++Visit http://localhost:3001/ to intertact with the web app
 
 ### Built With
 
