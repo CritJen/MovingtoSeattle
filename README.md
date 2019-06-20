@@ -8,6 +8,8 @@ When you press the "Where should I live?" button 10 suggested rental listings wi
 
 ![VideoDemo](src/images/Demo-2-short.gif)
 
+Video demo: https://www.youtube.com/watch?v=U1AQ696BLOk
+
 ## Getting Started
 
 If you want to run this application locally you'll first need to navigate over to the backend: https://github.com/CritJen/MovingToSeattle-BackEnd
