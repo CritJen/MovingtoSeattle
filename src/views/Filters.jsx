@@ -34,7 +34,7 @@ export default function Filters({
       </div>
     );
   });
-
-  Filters.propTypes = propTypes;
-  Filters.defaultProps = defaultProps;
 }
+
+Filters.propTypes = propTypes;
+Filters.defaultProps = defaultProps;

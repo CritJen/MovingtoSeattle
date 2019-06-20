@@ -1,13 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "../stylesheets/suggestions.module.css";
 import { connect } from "react-redux";
 import HomeCard from "../views/HomeCard";
 import { toggleHovered as toggleHoveredAction } from "../reducers/suggestionsReducer";
-
-const propTypes = {};
-
-const defaultProps = {};
 
 class SuggestedHomes extends React.Component {
   constructor(props) {
@@ -35,9 +30,6 @@ class SuggestedHomes extends React.Component {
     );
   }
 }
-
-SuggestedHomes.propTypes = propTypes;
-SuggestedHomes.defaultProps = defaultProps;
 
 function mapStateToProps({ suggestions }) {
   return { suggestions };

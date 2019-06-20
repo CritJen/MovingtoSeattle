@@ -1,10 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Icon } from "antd";
-
-const propTypes = {};
-
-const defaultProps = {};
 
 const Marker = props => {
   return (
@@ -29,8 +24,5 @@ const Marker = props => {
     </>
   );
 };
-
-Marker.propTypes = propTypes;
-Marker.defaultProps = defaultProps;
 
 export default Marker;

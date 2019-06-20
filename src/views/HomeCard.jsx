@@ -34,8 +34,6 @@ export default function HomeCard({
   let cleanAddress = address.replace(/[|&;$%@"<>()+,]/g, "");
   let link = `https://www.seattlerentals.com/${neighborhood}/apartments/${link_id}`;
 
-  let additionalClassName = hovered ? "{styles.selected}" : "";
-
   return (
     <React.Fragment>
       <div
