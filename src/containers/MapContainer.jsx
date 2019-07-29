@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import GoogleMapReact from "google-map-react";
 import Marker from "../views/Marker";
 import { toggleHovered as toggleHoveredAction } from "../reducers/suggestionsReducer";
+import { getHeatMapData } from "../utils/MapContainerUtils";
 
 const propTypes = {
   selectedCategories: PropTypes.array.isRequired,
@@ -22,20 +23,7 @@ export function MapContainer({
     width: "80vh",
     height: "80%"
   };
-  const heatMapData = {
-    positions: locations
-      // .filter((location, index) => index > 200 && index < 250)
-      .map(location => ({
-        lat: Math.round(location.latitude * 10000) / 10000,
-        lng: Math.round(location.longitude * 10000) / 10000,
-        weight: selectedCategories.find(cat => cat.id === location.category_id)
-          .weight
-      })),
-    options: {
-      radius: 12,
-      opacity: 1
-    }
-  };
+  const heatMapData = getHeatMapData(locations, selectedCategories);
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>

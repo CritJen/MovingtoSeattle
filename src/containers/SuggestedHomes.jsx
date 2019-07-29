@@ -12,11 +12,6 @@ class SuggestedHomes extends React.Component {
     };
   }
 
-  componentDidMount = () => {
-    // console.log(this.props);
-    // this.setState({ suggestedRentals: rentals });
-  };
-
   render() {
     const { toggleHovered } = this.props;
     return (

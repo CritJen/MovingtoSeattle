@@ -3,7 +3,8 @@ import { createReducer, createAction } from "redux-starter-kit";
 //Defining initial state
 const initialState = [];
 
-const categoriesUrl = "http://localhost:3000/categories";
+const categoriesUrl =
+  "http://ec2-18-217-182-61.us-east-2.compute.amazonaws.com:3000/categories";
 
 //Fetches the data from our backend api, passes it into the addLocations action creator, and then dispatches the result
 export const getCategories = () => dispatch => {
