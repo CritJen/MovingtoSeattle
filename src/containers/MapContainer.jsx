@@ -28,7 +28,7 @@ export function MapContainer({
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyC5GtsnQTnxNEJuwDpjgb9laNU8Ta35RLw" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY }}
         defaultZoom={14}
         yesIWantToUseGoogleMapApiInternals
         style={{ mapStyles }}

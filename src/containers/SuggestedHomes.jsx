@@ -5,19 +5,13 @@ import HomeCard from "../views/HomeCard";
 import { toggleHovered as toggleHoveredAction } from "../reducers/suggestionsReducer";
 
 class SuggestedHomes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      suggestedRentals: []
-    };
-  }
-
   render() {
     const { toggleHovered } = this.props;
     return (
       <React.Fragment>
         <div className={styles.suggestionsColumn}>
           {this.props.suggestions.map(rental => (
+            //Setting a key in the HomeCard props object for each key of the rental object plus our toggleHovered action
             <HomeCard {...rental} toggleHovered={toggleHovered} />
           ))}
         </div>

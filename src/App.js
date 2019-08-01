@@ -22,7 +22,7 @@ function App() {
       <div className={styles.app}>
         <Page
           mapContainer={<MapContainer />}
-          topForm={<FiltersContainer />}
+          leftForm={<FiltersContainer />}
           suggestions={<SuggestedHomes />}
         />
       </div>

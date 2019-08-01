@@ -24,12 +24,14 @@ export default function Filters({
         <Slider
           defaultValue={30}
           disabled={!selected}
-          onChange={onWeightChange(category.id)}
+          //On render calls the function in container which returns a callback function with the categoryId baked in
+          onChange={onWeightChange(id)}
         />
         <Switch
           size="small"
           checked={selected}
-          onChange={onToggleCategory(category.id)}
+          //On render calls the function in container which returns a callback function with the categoryId baked in
+          onChange={onToggleCategory(id)}
         />
       </div>
     );

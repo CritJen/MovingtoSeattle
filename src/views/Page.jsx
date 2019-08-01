@@ -23,10 +23,10 @@ export default class Page extends React.Component {
   };
 
   render() {
-    const { mapContainer, topForm, suggestions } = this.props;
+    const { mapContainer, leftForm, suggestions } = this.props;
     return (
       <React.Fragment>
-        <div style={{ padding: 5 }}>{topForm}</div>
+        <div style={{ padding: 5 }}>{leftForm}</div>
         <div className={styles.map}>{mapContainer}</div>
         <div>{suggestions}</div>
       </React.Fragment>
