@@ -2,10 +2,10 @@ import { createReducer, createAction } from "redux-starter-kit";
 
 //Defining initial state
 const initialState = [];
-const propertiesUrl =
-  "http://ec2-18-217-182-61.us-east-2.compute.amazonaws.com:3000/properties";
+const propertiesUrl = "http://localhost:3000/properties";
 
-//Fetches the data from our backend api, passes it into the addLocations action creator, and then dispatches the result
+//Using thunk to handle async call
+//When this function is dispatched it returns a callback function that recieved dispatch, makes a fetch request, and dispatches an action based on the result
 export const getProperties = () => dispatch => {
   fetch(propertiesUrl)
     .then(resp => resp.json())

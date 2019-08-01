@@ -2,20 +2,20 @@ import { createReducer, createAction } from "redux-starter-kit";
 
 //Defining initial state
 const initialState = [];
-const locationsUrl =
-  "http://ec2-18-217-182-61.us-east-2.compute.amazonaws.com:3000/locations";
+const locationsUrl = "http://localhost:3000/locations";
 
-//Fetches the data from our backend api, passes it into the addLocations action creator, and then dispatches the result
+//Using thunk to handle async call
+//When this function is dispatched it returns a callback function that recieved dispatch, makes a fetch request, and dispatches an action based on the result
 export const getLocations = () => dispatch => {
   fetch(locationsUrl)
     .then(resp => resp.json())
     .then(data => dispatch(addLocations(data)));
 };
 
-//Creating action creator functions and assigning them to variables
+//Creating action creator function and assigning it to a variable
 export const addLocations = createAction("addLocations");
 
-//Creating the reducer to handle different action types. Finding the action type through toString on the variables
+//Creating the reducer to handle different action types. Finding the action type through toString on the variables (brackets around the object key causes it to be evaluated)
 const locationsReducer = createReducer(initialState, {
   [addLocations]: (state, action) => {
     return [...action.payload];

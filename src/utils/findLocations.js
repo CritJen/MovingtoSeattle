@@ -15,7 +15,6 @@ export function findDistance(locations, properties) {
         var lon1 = property.longitude;
 
         var R = 6371; // km
-        //has a problem with the .toRad() method below.
         var x1 = lat2 - lat1;
         var dLat = x1.toRad();
         var x2 = lon2 - lon1;
@@ -41,5 +40,6 @@ export function findDistance(locations, properties) {
       ? 1
       : 0
   );
+  //Returns the first ten once sorted
   return sortedProperties.slice(0, 10);
 }

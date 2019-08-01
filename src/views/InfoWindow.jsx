@@ -1,3 +1,4 @@
+//This is currently unused, left for styling flexibility later
 import React from "react";
 import PropTypes from "prop-types";
 

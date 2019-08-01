@@ -37,6 +37,7 @@ export default function HomeCard({
   return (
     <React.Fragment>
       <div
+        //Ternary that determines whether an additional class is applied based on whether it's hovered (makes it a star)
         className={`${styles.card} ${hovered ? styles.selected : " "}`}
         onMouseEnter={() => toggleHovered(id)}
         onMouseLeave={() => toggleHovered(id)}

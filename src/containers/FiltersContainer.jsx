@@ -25,6 +25,7 @@ function FiltersContainer({
   properties,
   addSuggestions
 }) {
+  //Function that returns a callback function with the appropriate categoryId baked in for each category
   const onToggleCategory = categoryId => ev => {
     toggleCategory(categoryId);
   };
@@ -72,13 +73,14 @@ function FiltersContainer({
 FiltersContainer.propTypes = propTypes;
 FiltersContainer.defaultProps = defaultProps;
 
-//Creating a categories prop with a value of an array of objects containing all possible categories
 function mapStateToProps({ categories, properties, locations }) {
+  //Creating a selectedCategories variable which is then used to return the corresponding locations as a prop
   const selectedCategories = categories.filter(category => category.selected);
   return {
     categories,
     properties,
     locations: locations.filter(location =>
+      //some is an iterator that returns a boolean based on whetheer the locations category id is found in selected categories
       selectedCategories.some(
         selectedCategory => selectedCategory.id === location.category_id
       )
@@ -88,6 +90,7 @@ function mapStateToProps({ categories, properties, locations }) {
 
 export default connect(
   mapStateToProps,
+  // map dispatched action creators to props
   {
     toggleCategory: toggleCategoryAction,
     changeWeight: changeWeightAction,
